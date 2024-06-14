@@ -44,11 +44,14 @@ public class Main {
 		run();
 	}
 	
+	
 	public static void run() {
 		int frames = 0;
 		long timePerFrameInNano = 1000000000/TARGETFPS;
 		long lastUpdate = System.nanoTime();
 		long timer = System.nanoTime();
+		
+		new Thing(Asset.defaultImage, 100, 100, 100, 100);
 		
 		while(true) {
 			if(System.nanoTime()-lastUpdate >= timePerFrameInNano) {
