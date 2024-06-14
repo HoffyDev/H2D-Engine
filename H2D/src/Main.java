@@ -50,8 +50,6 @@ public class Main {
 		long lastUpdate = System.nanoTime();
 		long timer = System.nanoTime();
 		
-		Thing t = new Thing(Asset.defaultImage, 0, 0);
-		
 		while(true) {
 			if(System.nanoTime()-lastUpdate >= timePerFrameInNano) {
 				frames++;

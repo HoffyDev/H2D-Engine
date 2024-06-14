@@ -8,14 +8,13 @@
  *	know what that is don't worry. It is basically a build-in class from Java that
  *	allows you to create a window.
  *
- *	So whatever will we shown on screen will run through this class. It has a Queue
+ *	So whatever will be shown on screen will run through this class. It has a Queue
  *	responsible for everything that needs to be rendered onto the screen.
  *
  *	Usage:
  *	If you want something to be shown on the Display, you have to add it to the
  *	renderQueue. It is a static Array-List, meaning you just need to call it by:
  *	
- *
  *	Display.renderQueue.add(Thing t); --> to add something to be rendered
  *
  *	Display.renderQueue.remove(Thing t); --> to delete something to be rendered
