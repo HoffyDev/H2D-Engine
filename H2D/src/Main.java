@@ -34,18 +34,24 @@ import AssetHandling.ImageLoader;
 import Frame.Display;
 import Things.Thing;
 
-public class Main {
+public class Main extends Thread{
 	private static int fps = 0; //Move into run()?
 	private final static int TARGETFPS = 60; //change to work with cfg
 	
 	private static Display d = new Display(); //This sets up the window
 
 	public static void main(String[] args) {
-		run();
+		Main main = new Main();
+		AssetLoader assetLoader = new AssetLoader();
+		
+		assetLoader.start();
+		main.start();
 	}
 	
-	
-	public static void run() {
+	@Override
+	public void run() {
+		Asset.initLoadingScreen();
+		
 		int frames = 0;
 		long timePerFrameInNano = 1000000000/TARGETFPS;
 		long lastUpdate = System.nanoTime();
