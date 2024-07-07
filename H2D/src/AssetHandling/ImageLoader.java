@@ -12,7 +12,7 @@ public class ImageLoader {
 		try {
 			return ImageIO.read(new File(path));
 		} catch (IOException e) {
-			return null;
+			return new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
 		}
 	}
 	

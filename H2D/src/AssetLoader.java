@@ -5,6 +5,7 @@ public class AssetLoader extends Thread{
 	@Override
 	public void run() {
 		Asset.init();
+		this.stop();
 	}
 
 }

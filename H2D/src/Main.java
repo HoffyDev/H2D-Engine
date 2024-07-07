@@ -38,14 +38,23 @@ public class Main extends Thread{
 	private static int fps = 0; //Move into run()?
 	private final static int TARGETFPS = 60; //change to work with cfg
 	
-	private static Display d = new Display(); //This sets up the window
+	private static Display d = new Display(); //>> This sets up the window. See the "Display" class for more info
+	
+	private static State currState; /* 
+									   >> This is the State the Program is in right now, your code should happen inside a
+									   >> State. For more info see the abstract class "State"
+									*/
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // >> This is the main method... do I really need to explain this?
 		Main main = new Main();
 		AssetLoader assetLoader = new AssetLoader();
+		/*
+		 	>> Creates an Instance of the Main- and AssetLoader-Class for Multi-Threading
+		 	>> For more info, see the "AssetLoader"-Class
+		 */
 		
-		assetLoader.start();
-		main.start();
+		assetLoader.start(); //Calls the run()-Method of the AssetLoader in a new Thread
+		main.start(); //Calls the run()-Method of Main in a new Thread
 	}
 	
 	@Override
@@ -57,7 +66,7 @@ public class Main extends Thread{
 		long lastUpdate = System.nanoTime();
 		long timer = System.nanoTime();
 		
-		new Thing(Asset.defaultImage, 100, 100, 100, 100);
+		new Thing(Asset.loadTest, 100, 100, 100, 100);
 		
 		while(true) {
 			if(System.nanoTime()-lastUpdate >= timePerFrameInNano) {
