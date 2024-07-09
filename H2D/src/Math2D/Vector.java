@@ -65,6 +65,11 @@ public class Vector {
 		this.y -= y;
 	}
 	
+	public void subVector(Vector v) {
+		subX(v.getXDouble());
+		subY(v.getYDouble());
+	}
+	
 	public double length() {
 		return Math.sqrt((x*x) + (y*y)); //Pythagoras
 	}
@@ -80,11 +85,6 @@ public class Vector {
 		//Sets the length to 1 while retaining the Vectors Orientation
 		this.x /= length();
 		this.y /= length();
-	}
-	
-	public void subVector(Vector v) {
-		subX(v.getXDouble());
-		subY(v.getYDouble());
 	}
 	
 	//Setters
