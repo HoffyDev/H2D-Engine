@@ -71,23 +71,45 @@ public class Vector {
 	}
 	
 	public double length() {
-		return Math.sqrt((x*x) + (y*y)); //Pythagoras
+		return Math.sqrt((x*x) + (y*y)); //>> Pythagoras
 	}
 	
 	public Vector getNormalizedVector() {
-		//Returns a normalized Variation of the Vector, without altering this instance
+		//>> Returns a normalized Variation of the Vector, without altering this instance
 		Vector v = new Vector(x, y);
 		v.normalize();
 		return v;
 	}
 	
 	public void normalize() {
-		//Sets the length to 1 while retaining the Vectors Orientation
+		//>> Sets the length to 1 while retaining the Vectors Orientation
 		this.x /= length();
 		this.y /= length();
 	}
 	
-	//Setters
+	public void rotateBy(double degree) {
+		/*
+		 * NOTE: This function can only turn a Vector by max 180° at this point
+		 */
+		
+		//>> Convert degree to Radians
+        double radians = Math.toRadians(degree);
+        
+        //>> Normalize the radian to fit in the Interval [-180°, 180°]
+        radians = radians % (2 * Math.PI);
+        if (radians >= Math.PI) {
+        	radians -= 2 * Math.PI;
+        } 
+        else if (radians < -Math.PI) {
+        	radians += 2 * Math.PI;
+        }
+        
+        //>> Calculate new x and y
+        this.x = x * Math.cos(radians) - y * Math.sin(radians); //>> Trigonometrical Functions, search for Vector-Rotation to find out more
+        this.y = x * Math.sin(radians) + y * Math.cos(radians);
+	}
+	
+	//Setter
 	public void setX(double x) {
 		this.x = x;
 	}
