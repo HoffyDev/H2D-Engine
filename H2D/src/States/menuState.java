@@ -13,5 +13,9 @@ public class menuState extends EState{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public void test() {
+		
+	}
 
 }

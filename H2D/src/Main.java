@@ -33,7 +33,7 @@ import Things.Thing;
 
 public class Main extends Thread {
 	
-	private static int fps = 0; //Move into run()?
+	private static int fps = 0; //Move into run()???
 	private final static int TARGETFPS = 60; //change to work with cfg
 	
 	private static Display d = new Display(); //>> This sets up the window. See the "Display" class for more info
@@ -94,6 +94,7 @@ public class Main extends Thread {
 	public void switchState(State s) {
 		//TODO: init and loadingScreen stuff
 	}
+	
 	
 	//Getter
 	public int getFPS() {
