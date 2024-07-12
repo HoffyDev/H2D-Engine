@@ -48,8 +48,8 @@ public class Main extends Thread {
 		Main main = new Main();						 //>> Creates an Instance of the Main- and AssetLoader-Class for Multi-Threading
 		AssetLoader assetLoader = new AssetLoader(); //   For more info, see the "AssetLoader"-Class
 		
-		assetLoader.start(); //Calls the run()-Method of the AssetLoader in a new Thread
-		main.start(); //Calls the run()-Method of Main in a new Thread
+		assetLoader.start(); //>> Calls the run()-Method of the AssetLoader in a new Thread
+		main.start(); //>> Calls the run()-Method of Main in a new Thread
 	}
 	
 	@Override

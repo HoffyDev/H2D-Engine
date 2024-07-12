@@ -1,8 +1,10 @@
 package Math2D;
 
+import Frame.Display;
+
 public class Point {
 	private double x, y;
-	private String ID = "";
+	private String ID = "N/A";
 	
 	public Point(double x, double y) {
 		this.x = x;
