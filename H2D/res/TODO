@@ -1,0 +1,5 @@
+TODO:
+	- Vector -> Add missing Vectormath
+	- Vector.rotateBy() -> fix 180° "Limit"
+	- Main.switchState() -> find a way to use Multithreading for initialization
+	- Math2D -> Add Lines and Boxes
