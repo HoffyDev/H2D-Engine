@@ -2,7 +2,7 @@ package Math2D;
 
 public class Vector {
 	private double x, y;
-	private String ID = "N/A";
+	private String ID = "";
 	
 	public Vector(double x, double y) {
 		this.x = x;

@@ -4,7 +4,7 @@ import Frame.Display;
 
 public class Point {
 	private double x, y;
-	private String ID = "N/A";
+	private String ID = "";
 	
 	public Point(double x, double y) {
 		this.x = x;
