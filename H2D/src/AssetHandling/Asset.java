@@ -2,7 +2,9 @@ package AssetHandling;
 
 import java.awt.image.BufferedImage;
 
-public class Asset {
+import Interfaces.Preloadable;
+
+public class Asset implements Preloadable{
 
 	public static final BufferedImage defaultImage = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
 	public static BufferedImage loadTest;

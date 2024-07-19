@@ -45,10 +45,10 @@ public class Main extends Thread {
 
 	public static void main(String[] args) { // >> This is the main method... do I really need to explain this?
 		
-		Main main = new Main();						 //>> Creates an Instance of the Main- and AssetLoader-Class for Multi-Threading
-		AssetLoader assetLoader = new AssetLoader(); //   For more info, see the "AssetLoader"-Class
+		Main main = new Main();					//>> Creates an Instance of the Main- and Loader-Class for Multi-Threading
+		Loader loader = new Loader(null);//>> For more info, see the "Loader"-Class
 		
-		assetLoader.start(); //>> Calls the run()-Method of the AssetLoader in a new Thread
+		loader.start(); //>> Calls the run()-Method of the Loader in a new Thread
 		main.start(); //>> Calls the run()-Method of Main in a new Thread
 	}
 	
@@ -91,8 +91,9 @@ public class Main extends Thread {
 		currState.update();
 	}
 	
-	public void switchState(State s) {
+	public void switchState(EState s) {
 		//TODO: init and loadingScreen stuff
+		
 	}
 	
 	

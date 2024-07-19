@@ -30,9 +30,9 @@
 package States;
 
 import Frame.Display;
-import Interfaces.Updateable;
+import Interfaces.Preloadable;
 
-public abstract class EState {
+public abstract class EState implements Preloadable{
 
 	public abstract void init();
 	
