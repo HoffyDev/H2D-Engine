@@ -1,4 +1,3 @@
-import AssetHandling.Asset;
 import Interfaces.Preloadable;
 
 public class Loader extends Thread{ //Genral Loader Thread???
