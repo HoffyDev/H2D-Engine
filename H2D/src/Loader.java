@@ -9,6 +9,7 @@ public class Loader extends Thread{ //Genral Loader Thread???
 	public Loader(Preloadable p) {
 		this.p = p;
 		isLoading = true;
+		//start()??
 	}
 	
 	@Override
