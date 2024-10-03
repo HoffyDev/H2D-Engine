@@ -26,7 +26,7 @@
  */
 
 
-import AssetHandling.Asset;
+import AssetHandling.Assets;
 import Frame.Display;
 import States.EState;
 import Things.Thing;
@@ -38,15 +38,15 @@ public class Main extends Thread {
 	
 	private static Display d = new Display(); //>> This sets up the window. See the "Display" class for more info
 	
-	private static EState currState; /* >> This is the EState the Program is in right now, your code should happen inside a
+	private static EState currState = EState.menuState; /* >> This is the EState the Program is in right now, your code should happen inside a
 									State. For more info see the abstract class "EState"
 							  */
 	
 
 	public static void main(String[] args) { // >> This is the main method... do I really need to explain this?
 		
-		Main main = new Main();					//>> Creates an Instance of the Main- and Loader-Class for Multi-Threading
-		Loader loader = new Loader(null);//>> For more info, see the "Loader"-Class
+		Main main = new Main();	//>> Creates an Instance of the Main- and Loader-Class for Multi-Threading
+		Loader loader = new Loader(Handler.getAssetObject());//>> For more info, see the "Loader"-Class
 		
 		loader.start(); //>> Calls the run()-Method of the Loader in a new Thread
 		main.start(); //>> Calls the run()-Method of Main in a new Thread
@@ -54,14 +54,13 @@ public class Main extends Thread {
 	
 	@Override
 	public void run() {
-		Asset.initLoadingScreen();
-		
+		//This needs to set up the Loading Screen Assets first, rest will be loaded through the other Thread
 		int frames = 0;
 		long timePerFrameInNano = 1000000000/TARGETFPS;
 		long lastUpdate = System.nanoTime();
 		long timer = System.nanoTime();
 		
-		new Thing(Asset.loadTest, 100, 100, 100, 100);
+		new Thing(Assets.loadTest, 100, 100, 100, 100);
 		
 		while(true) {
 			if(System.nanoTime()-lastUpdate >= timePerFrameInNano) {

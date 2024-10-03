@@ -52,10 +52,10 @@ public class Display {
 		
 		frame = new JFrame();
 		frame.setSize(d);
-		frame.setResizable(false);
+		frame.setResizable(true);
 		frame.setAlwaysOnTop(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setUndecorated(true);
+		frame.setUndecorated(false);
 		frame.setVisible(true);
 		
 		canvas = new Canvas();

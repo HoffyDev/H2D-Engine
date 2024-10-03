@@ -32,7 +32,9 @@ package States;
 import Frame.Display;
 import Interfaces.Preloadable;
 
-public abstract class EState implements Preloadable{
+public abstract class EState implements Preloadable {
+	
+	public static EState menuState = new MenuState();
 
 	public abstract void init();
 	

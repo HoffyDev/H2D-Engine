@@ -1,6 +1,6 @@
 package States;
 
-public class menuState extends EState{
+public class MenuState extends EState{
 
 	@Override
 	public void init() {
