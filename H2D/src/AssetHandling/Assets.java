@@ -6,10 +6,11 @@ import Interfaces.Preloadable;
 
 public class Assets implements Preloadable{
 
-	public static final BufferedImage defaultImage = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
+	private boolean isLoaded = false;
+	public final BufferedImage defaultImage = new BufferedImage(100, 100, BufferedImage.TYPE_BYTE_GRAY);
 	public static BufferedImage loadTest;
 	
-	public static void initLoadingScreen() {
+	public void initLoadingScreen() {
 		loadTest = ImageLoader.loadImage("res/gfx/LoadTest.png");
 	}
 	
@@ -21,6 +22,12 @@ public class Assets implements Preloadable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		isLoaded = true;
 		System.out.println("Finished...");
+	}
+	
+	//Getter
+	public boolean isLoaded() {
+		return isLoaded;
 	}
 }
