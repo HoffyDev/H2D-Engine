@@ -5,3 +5,5 @@ TODO:
 	- Easy Asset Inclusion?
 	- Preloadable -> init() is static in Asset-class! How do I implement the Interface properly?
 		Currently running Assets through an object, maybe put the Loading into a State
+		
+		GITHUB PUSH TEST!!!
