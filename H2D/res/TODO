@@ -1,9 +1,8 @@
 TODO:
 	- Vector -> Add missing Vectormath (Scalar-Product, Positional-Relation, Vector/Vector-Angle)
-	- Main.switchState() -> find a way to use Multithreading for initialization
+	- Main.switchState() -> find a way to use Multithreading for initialization (tough nut)
 	- Math2D -> Add Lines and Boxes
 	- Easy Asset Inclusion?
 	- Preloadable -> init() is static in Asset-class! How do I implement the Interface properly?
-		Currently running Assets through an object, maybe put the Loading into a State
-		
-		GITHUB PUSH TEST!!!
+		-> Currently running Assets through an object, maybe put the Loading into a State
+			-> Worked out! now the StartupState needs to switch to MenuState after Completion
